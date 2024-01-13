@@ -11,12 +11,7 @@ app.use('/res', (req, res) => {
     res.send('Express Vercel App Response')
 });
 
-app.use(cors({
-    origin: process.env.REACT_APP_FRONTEND_URL, // Gunakan environment variable
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
-}));
-
+app.use(cors());
 app.use(express.json());
 app.use(UserRoute);
 
